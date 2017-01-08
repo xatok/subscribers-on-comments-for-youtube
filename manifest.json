@@ -4,6 +4,7 @@
   "manifest_version": 2,
   "name": "Subscribers on comments for YouTube™",
   "version": "1.0",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
 
   "background": {
     "scripts": ["js/background.js"]
