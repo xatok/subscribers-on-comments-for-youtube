@@ -1,0 +1,56 @@
+.subslabel-label-bg {
+	margin-left: 5px;
+	border-radius:9px;
+	padding:1px 6px;
+	vertical-align:middle
+}
+
+/* 0 */
+.bluebg-0 {
+	background-color:#5CBBFF;
+}
+
+/* 10 */
+.bluebg-10 {
+	background-color:#33AAFF;
+}
+
+/* 100 */
+.bluebg-100 {
+	background-color:#0A99FF;
+}
+
+/* 1k */
+.bluebg-1k {
+	background-color:#0083E0;
+}
+
+/* 10k */
+.bluebg-10k {
+	background-color:#006BB8;
+}
+
+/* 100k */
+.bluebg-100k {
+	background-color:#00538F;
+}
+
+/* 1m */
+.bluebg-1m {
+	background-color:#003C66;
+}
+
+/* 10m */
+.bluebg-10m {
+	background-color:#00243D;
+}
+
+/* 100m */
+.bluebg-100m {
+	background-color:#000C14;
+}
+
+.subslabel-text {
+	color:#fff;
+	font-size:12px
+}
