@@ -3,11 +3,11 @@
   "description": "Shows the YouTube subscribers count of each user's comment.",
   "manifest_version": 2,
   "name": "Subscribers on comments for YouTube™",
-  "version": "1.0",
+  "version": "1.1",
   "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/apply-css",
 
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["/js/background.js"]
   },
 
   "page_action": {
@@ -21,13 +21,16 @@
   },
   
   "permissions": [
+    "tabs",
+    "webNavigation",
     "*://www.youtube.com/*"
   ],
 
   "content_scripts": [
     {
       "matches": ["*://www.youtube.com/*"],
-      "js": ["js/content-script.js"]
+      "css" : ["/css/content-style.css"],
+      "js": ["/js/content-script.js"]
     }
   ]
 

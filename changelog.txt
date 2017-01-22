@@ -1,0 +1,9 @@
+v1.1
+
+- Improved comments update detection
+- Handled hidden count subscribers channels
+- Labels aren't clickable anymore
+
+v1.0
+
+- First BETA release

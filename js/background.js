@@ -19,34 +19,29 @@
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Receives message from injected script
-browser.runtime.onMessage.addListener(receiver);
-function receiver(message) {
-
-	if(isNumber(message))
-		browser.tabs.executeScript(message,{file: "js/content-script.js"});
+// Injects CSS and JS
+function inject(tab){
+	browser.tabs.insertCSS(tab.id,{file: "/css/content-style.css"});
+	browser.tabs.executeScript(tab.id,{file: "/js/content-script.js"});
 }
 
-// Return true if obj is a number
-function isNumber(obj) {
-	return !isNaN(parseFloat(obj))
-}
-
-function update(tab){
-	browser.tabs.sendMessage(tab.id,tab.id);
-	browser.tabs.insertCSS(tab.id,{file: "css/content-style.css"});
-	browser.tabs.executeScript(tab.id,{file: "js/content-script.js"});
+// Sends a message to check if script was already injected, otherwise, it injects it
+function checkAlreadyInjected(tab){
+	browser.tabs.sendMessage(tab.id,{message: "awake"}, function(response){
+		if(!response)
+			inject(tab);
+	});
 }
 
 // When first loaded, initialize the page action for all tabs.
 var gettingAllTabs = browser.tabs.query({});
 gettingAllTabs.then((tabs) => {
 	for (tab of tabs) {
-		update(tab);
+		checkAlreadyInjected(tab);
 	}
 });
 
-// Each time a tab is updated, reset the page action for that tab.
+// Check if the updated tab already has the injection.
 browser.tabs.onUpdated.addListener((id, changeInfo, tab) => {
-	update(tab);
+	checkAlreadyInjected(tab);
 });

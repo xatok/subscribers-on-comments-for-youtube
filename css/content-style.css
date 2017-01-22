@@ -2,7 +2,13 @@
 	margin-left: 5px;
 	border-radius:9px;
 	padding:1px 6px;
-	vertical-align:middle
+	vertical-align:middle;
+	pointer-events: none;
+}
+
+/* Hidden Subscribers Count */
+.bluebg-h {
+	background-color:#85D6FF;
 }
 
 /* 0 */
