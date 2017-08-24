@@ -3,7 +3,7 @@
   "description": "Shows the YouTube subscribers count of each user's comment.",
   "manifest_version": 2,
   "name": "Subscribers on comments for YouTube™",
-  "version": "1.1",
+  "version": "1.2",
   "homepage_url": "https://github.com/xatok/subscribers-on-comments-for-youtube",
   "background": {
     "scripts": ["/js/background.js"]
